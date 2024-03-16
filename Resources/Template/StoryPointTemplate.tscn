@@ -1,0 +1,337 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1j85aawr62e8"]
+
+[ext_resource type="Script" path="res://Classes/Scripts/StoryPointGraphController.cs" id="1_cm8pk"]
+[ext_resource type="Script" path="res://Classes/Scripts/StoryPointConnectionContainer.cs" id="2_ydj50"]
+
+[node name="StoryPointTemplate" type="GraphNode"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+offset_right = 495.0
+offset_bottom = 666.0
+title = "Story Element"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = true
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+script = ExtResource("1_cm8pk")
+
+[node name="for_connecting_enter" type="Control" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 30)
+layout_mode = 2
+
+[node name="connections_container" type="Container" parent="for_connecting_enter"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.333
+offset_right = 1.0
+offset_bottom = -9.99
+script = ExtResource("2_ydj50")
+
+[node name="label_enter" type="Label" parent="for_connecting_enter/connections_container"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "For enter
+"
+horizontal_alignment = 2
+
+[node name="btn_clear_connections" type="Button" parent="for_connecting_enter/connections_container"]
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+text = "Clear"
+
+[node name="label_exit" type="Label" parent="for_connecting_enter/connections_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "For enter"
+
+[node name="for_connecting_exit" type="Control" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 30)
+layout_mode = 2
+
+[node name="connections_container" type="Container" parent="for_connecting_exit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.333
+offset_right = 1.0
+offset_bottom = -9.99
+script = ExtResource("2_ydj50")
+
+[node name="label_enter" type="Label" parent="for_connecting_exit/connections_container"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "For exit
+"
+horizontal_alignment = 2
+
+[node name="label_exit" type="Label" parent="for_connecting_exit/connections_container"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "For exit"
+
+[node name="inside" type="Control" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+
+[node name="text_story_point_id" type="LineEdit" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.029
+anchor_top = -3.63464e+13
+anchor_right = 1.028
+anchor_bottom = 2.67333e+14
+offset_left = 18.253
+offset_top = 112.66
+offset_right = -13.796
+offset_bottom = -469.493
+theme_override_colors/font_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_colors/font_selected_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_colors/font_placeholder_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_colors/font_outline_color = Color(0.917647, 0.917647, 0.917647, 1)
+theme_override_font_sizes/font_size = 24
+placeholder_text = "Past here an ID..."
+alignment = 1
+context_menu_enabled = false
+middle_mouse_paste_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="music_label" type="Label" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.034
+anchor_top = -3.32892e+13
+anchor_right = 1.037
+anchor_bottom = 2.66653e+14
+offset_left = 24.538
+offset_top = 157.296
+offset_right = -355.909
+offset_bottom = -426.079
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Music ID:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text_music_id" type="LineEdit" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.034
+anchor_top = -3.45879e+13
+anchor_right = 1.035
+anchor_bottom = 2.66615e+14
+offset_left = 147.538
+offset_top = 164.0
+offset_right = -21.995
+offset_bottom = -427.0
+theme_override_font_sizes/font_size = 20
+
+[node name="text_id_label" type="Label" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.036
+anchor_top = -3.36272e+13
+anchor_right = 1.035
+anchor_bottom = 2.66375e+14
+offset_left = 33.452
+offset_top = 204.0
+offset_right = -367.995
+offset_bottom = -386.5
+theme_override_font_sizes/font_size = 24
+text = "Text ID:"
+
+[node name="text_id" type="LineEdit" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.025
+anchor_top = -3.45879e+13
+anchor_right = 1.033
+anchor_bottom = 2.66375e+14
+offset_left = 143.425
+offset_top = 207.0
+offset_right = -22.081
+offset_bottom = -383.5
+theme_override_font_sizes/font_size = 20
+
+[node name="text_anim_time_label" type="Label" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.033
+anchor_top = -3.45879e+13
+anchor_right = 1.035
+anchor_bottom = 2.66856e+14
+offset_left = 33.081
+offset_top = 251.0
+offset_right = -273.995
+offset_bottom = -342.5
+theme_override_font_sizes/font_size = 24
+text = "Text anim time:"
+
+[node name="text_anim_time" type="LineEdit" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.03
+anchor_top = -3.43478e+13
+anchor_right = 1.036
+anchor_bottom = 2.66375e+14
+offset_left = 220.92
+offset_top = 251.5
+offset_right = -191.704
+offset_bottom = -338.5
+theme_override_font_sizes/font_size = 20
+placeholder_text = "1.5"
+alignment = 1
+max_length = 10
+virtual_keyboard_type = 2
+
+[node name="btn_customise_characters" type="Button" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.035
+anchor_top = -3.43478e+13
+anchor_right = 1.033
+anchor_bottom = 2.66615e+14
+offset_left = 8.065
+offset_top = 378.5
+offset_right = -297.011
+offset_bottom = -216.999
+text = "Customize characters"
+
+[node name="btn_customise_conditions" type="Button" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.032
+anchor_top = -3.57889e+13
+anchor_right = 1.028
+anchor_bottom = 2.65414e+14
+offset_left = 5.688
+offset_top = 419.5
+offset_right = -295.732
+offset_bottom = -176.499
+text = "Customise conditions"
+
+[node name="btn_switch_choose" type="Button" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.032
+anchor_top = -3.45879e+13
+anchor_right = 1.036
+anchor_bottom = 2.82949e+14
+offset_left = 200.688
+offset_top = 381.0
+offset_right = -96.4119
+offset_bottom = -249.0
+text = "Choose Dialog"
+
+[node name="custom_id_label" type="Label" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.036
+anchor_top = -3.43478e+13
+anchor_right = 1.034
+anchor_bottom = 2.67096e+14
+offset_left = 37.452
+offset_top = 293.5
+offset_right = -324.538
+offset_bottom = -300.0
+theme_override_font_sizes/font_size = 24
+text = "Custom ID:"
+
+[node name="text_custom_id" type="LineEdit" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.026
+anchor_top = -3.38674e+13
+anchor_right = 1.03
+anchor_bottom = 2.66856e+14
+offset_left = 173.064
+offset_top = 293.5
+offset_right = -18.92
+offset_bottom = -296.5
+theme_override_font_sizes/font_size = 20
+
+[node name="btn_collapse" type="Button" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.031
+anchor_top = -3.5667e+13
+anchor_right = 1.029
+anchor_bottom = 2.66993e+14
+offset_left = 427.167
+offset_top = 72.2462
+offset_right = -14.253
+offset_bottom = -515.786
+text = "-"
+
+[node name="lbl_background" type="Label" parent="inside"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.029
+anchor_top = -1.87351e+13
+anchor_right = 1.034
+anchor_bottom = 2.81267e+14
+offset_left = 16.311
+offset_top = 304.0
+offset_right = -325.606
+offset_bottom = -278.5
+theme_override_font_sizes/font_size = 24
+text = "Background:"
+
+[node name="text_background" type="LineEdit" parent="inside"]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 267.0
+offset_right = 454.0
+offset_bottom = 298.0
+
+[node name="collapsed" type="Control" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="btn_show_all" type="Button" parent="collapsed"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 4.0
+offset_right = 272.0
+offset_bottom = 35.0
+text = "Show Full Info"
+
+[connection signal="sort_children" from="for_connecting_enter/connections_container" to="for_connecting_enter/connections_container" method="OnSortChildren"]
+[connection signal="pressed" from="for_connecting_enter/connections_container/btn_clear_connections" to="." method="ClearConnections"]
+[connection signal="sort_children" from="for_connecting_exit/connections_container" to="for_connecting_exit/connections_container" method="OnSortChildren"]
+[connection signal="text_changed" from="inside/text_story_point_id" to="." method="OnStoryPointIDChanged"]
+[connection signal="pressed" from="inside/btn_collapse" to="." method="SwitchCollapseState"]
+[connection signal="pressed" from="collapsed/btn_show_all" to="." method="SwitchCollapseState"]

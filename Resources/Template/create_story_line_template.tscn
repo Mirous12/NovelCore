@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://pcrnuctuvfvx"]
+
+[ext_resource type="Script" path="res://Classes/Scripts/CreateStoryLineTemplateController.cs" id="1_i07rt"]
+
+[node name="CreateStoryLineTemplate" type="MarginContainer"]
+custom_minimum_size = Vector2(360, 38)
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 372.0
+offset_bottom = 52.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_i07rt")
+
+[node name="selected" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+color = Color(0.464779, 0.99927, 0.433085, 1)
+
+[node name="main_button" type="Button" parent="."]
+custom_minimum_size = Vector2(360, 40)
+layout_mode = 2
+
+[node name="text_label" type="Label" parent="main_button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 1.0
+offset_right = -51.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Default text"
+vertical_alignment = 1
+
+[node name="priority_label" type="Label" parent="main_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 308.0
+offset_top = 4.0
+offset_right = -8.0
+offset_bottom = -5.0
+grow_horizontal = 2
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="main_button" to="." method="OnElementClicked"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://t4idsq6hl6uy"]
+
+[ext_resource type="Script" path="res://Classes/Scripts/StoryPointRedactorController.cs" id="1_fwn4r"]
+
+[node name="StoryPointRedactor" type="Panel"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -5.0
+offset_bottom = -3.0
+script = ExtResource("1_fwn4r")
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.988
+offset_right = -1.0
+offset_bottom = -0.260023
+
+[node name="btn_add_story_point" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_top = 9.0
+offset_right = -9.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "+"
+
+[connection signal="connection_request" from="GraphEdit" to="." method="OnConnectionRequest"]
+[connection signal="disconnection_request" from="GraphEdit" to="." method="OnDisconnectRequest"]
+[connection signal="pressed" from="btn_add_story_point" to="." method="OnAddButtonClicked"]

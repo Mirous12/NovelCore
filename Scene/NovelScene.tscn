@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy6jry0fucagn"]
+
+[ext_resource type="Script" path="res://Classes/Scripts/NovelSceneScript.cs" id="1_o2fmf"]
+[ext_resource type="Texture2D" uid="uid://dabg7ldmgmpav" path="res://Resources/Sprites/Backgrounds/background_test.jpg" id="2_8igbs"]
+
+[node name="NovelScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o2fmf")
+
+[node name="text_panel" type="Panel" parent="."]
+z_index = 4096
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.022
+anchor_top = 1.0
+anchor_right = 0.978
+anchor_bottom = 1.0
+offset_left = -0.344002
+offset_top = -148.0
+offset_right = 0.343948
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="main_text_label" type="Label" parent="text_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.985
+offset_left = 17.0
+offset_top = 15.0
+offset_right = -0.470081
+offset_bottom = 123.0
+autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_8igbs")
+centered = false

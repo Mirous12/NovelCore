@@ -1,0 +1,188 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjcint0sfb7xs"]
+
+[ext_resource type="Script" path="res://Classes/Scripts/StoryLineCreateController.cs" id="1_0uhuv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn0wc"]
+bg_color = Color(0.568627, 0.94902, 0.588235, 1)
+
+[node name="StoryLinesRedactor" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="story_line_create" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -5.0
+offset_bottom = -1.0
+script = ExtResource("1_0uhuv")
+
+[node name="btn_add" type="Button" parent="story_line_create"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -197.0
+offset_top = 30.0
+offset_right = -47.0
+offset_bottom = 90.0
+
+[node name="Label" type="Label" parent="story_line_create/btn_add"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.947
+offset_right = -3.0
+offset_bottom = 0.0179964
+theme_override_font_sizes/font_size = 26
+text = "Add"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="scroll" type="ScrollContainer" parent="story_line_create"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 23.0
+offset_right = -651.0
+offset_bottom = -15.0
+
+[node name="box" type="VBoxContainer" parent="story_line_create/scroll"]
+layout_mode = 2
+
+[node name="panel_on_create" type="Panel" parent="story_line_create"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 286.0
+offset_top = 188.0
+offset_right = -272.0
+offset_bottom = -227.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gn0wc")
+
+[node name="label_enter_id" type="Label" parent="story_line_create/panel_on_create"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 13.0
+offset_right = -466.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Enter ID:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="text_id" type="TextEdit" parent="story_line_create/panel_on_create"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 138.0
+offset_top = 9.0
+offset_right = -12.0
+offset_bottom = -188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "Enter here a story line ID"
+
+[node name="label_priority" type="Label" parent="story_line_create/panel_on_create"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 65.0
+offset_right = -467.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Priority:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="text_priority" type="TextEdit" parent="story_line_create/panel_on_create"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 139.0
+offset_top = 60.0
+offset_right = -393.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+placeholder_text = "e.g. 1"
+
+[node name="btn_create" type="Button" parent="story_line_create/panel_on_create"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 141.0
+offset_top = 186.0
+offset_right = -298.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Create"
+
+[node name="btn_exit" type="Button" parent="story_line_create/panel_on_create"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 299.0
+offset_top = 187.0
+offset_right = -140.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Exit"
+
+[node name="btn_remove" type="Button" parent="story_line_create"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -197.0
+offset_top = 100.0
+offset_right = -47.0
+offset_bottom = 160.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "Remove"
+
+[node name="btn_choose" type="Button" parent="story_line_create"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -197.0
+offset_top = 170.0
+offset_right = -47.0
+offset_bottom = 230.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "Choose"
+
+[connection signal="pressed" from="story_line_create/btn_add" to="story_line_create" method="OnButtonAddPressed"]
+[connection signal="pressed" from="story_line_create/panel_on_create/btn_create" to="story_line_create" method="OnButtonCreateNewStoryLinePressed"]
+[connection signal="pressed" from="story_line_create/panel_on_create/btn_exit" to="story_line_create" method="OnButtonCancelPressed"]
+[connection signal="pressed" from="story_line_create/btn_remove" to="story_line_create" method="OnRemoveItemPressed"]
+[connection signal="pressed" from="story_line_create/btn_choose" to="story_line_create" method="OnChooseButtonClicked"]

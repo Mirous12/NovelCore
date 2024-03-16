@@ -1,0 +1,4 @@
+{
+    "create_story_line_template": "res://Resources/Template/create_story_line_template.tscn",
+    "story_point_template": "res://Resources/Template/StoryPointTemplate.tscn"
+}
